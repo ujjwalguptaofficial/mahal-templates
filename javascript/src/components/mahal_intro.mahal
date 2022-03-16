@@ -6,7 +6,7 @@ dateCreated:
 
 <html>
 <div class="mahal-app">
-	<img class="mahal-app_logo" :src="'mahal.png' | imgPath" alt="" />
+	<img class="mahal-app_logo" :src="'mahal-logo.png' | imgPath" alt="mahal-logo" />
 	<h1>Welcome to the {{appName}} App</h1>
 	<div class="mahal-app_imp-links-label">
 		Important Links
@@ -75,7 +75,7 @@ export default class extends Component {
     padding: 20px;
     a {
         color: #ffb431;
-        margin-left:15px;
+        margin-left: 15px;
     }
 }
 </style>

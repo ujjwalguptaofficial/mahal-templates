@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
-const rootFolder = path.join(__dirname, '../');
+const rootFolder = path.join(__dirname, '../../');
 
 module.exports = {
     entry: './src/index.js',
