@@ -1,7 +1,7 @@
 import { Mahal } from "mahal";
 import App from "@/app.mahal";
 import { registerGlobalFormatter } from "@/formatters";
-import config from "~/config";
+import config from "~/config/env";
 
 
 const app = new Mahal(App, '#app');

@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --open --config webpack/dev.config.js",
-    "deploy": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js",
-    "build": "cross-env NODE_ENV=development webpack --config webpack/dev.config.js"
+    "dev": "webpack serve --open --config config/webpack/dev.config.js",
+    "deploy": "cross-env NODE_ENV=production webpack --config config/webpack/prod.config.js",
+    "build": "cross-env NODE_ENV=development webpack --config config/webpack/dev.config.js"
   },
   "author": "",
   "license": "",

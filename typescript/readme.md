@@ -12,3 +12,9 @@ This app is generated using `mahal-creator`.
 * `npm run dev` - start development server
 * `npm run build` - create build for development
 * `npm run deploy` - create build for production
+
+# Folders
+
+* assets - contains all the static files for the application.
+* config - contains configuration files and folders for the application. The **env** folder inside it contains environment configuration.
+* src - contains source or code files for the appliction.
