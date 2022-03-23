@@ -3,8 +3,11 @@ const MahalPlugin = require('mahal-webpack-loader/lib/plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const rootFolder = path.join(__dirname, '../../');
+
+const isEnvProduction = process.env.NODE_ENV === "production"
 
 module.exports = {
     entry: './src/index.ts',
@@ -23,7 +26,12 @@ module.exports = {
             {
                 test: /\.css?$/,
                 use: [
-                    'style-loader',
+                    isEnvProduction ? {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            esModule: false,
+                        },
+                    } : 'style-loader',
                     'css-loader'
                 ],
             },
@@ -31,7 +39,12 @@ module.exports = {
                 test: /\.s[ac]ss$/i,
                 use: [
                     // Creates `style` nodes from JS strings
-                    "style-loader",
+                    isEnvProduction ? {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            esModule: false,
+                        },
+                    } : 'style-loader',
                     // Translates CSS into CommonJS
                     "css-loader",
                     // Compiles Sass to CSS
@@ -70,7 +83,8 @@ module.exports = {
         },
     },
     output: {
-        filename: 'bundles.js',
+        filename: isEnvProduction ? 'js/[name].[contenthash:8].js' : 'js/[name].js',
+        chunkFilename: isEnvProduction ? 'js/[name].[contenthash:8].chunk.js' : 'js/[name].chunk.js',
         path: path.resolve(rootFolder, 'dist'),
         publicPath: '/'
     },
@@ -97,5 +111,9 @@ module.exports = {
                 to: ''
             }]
         }),
+        new MiniCssExtractPlugin({
+            filename: isEnvProduction ? 'css/[name].[contenthash:8].css' : 'css/[name].css',
+            chunkFilename: isEnvProduction ? 'css/[name].[contenthash:8].chunk.css' : 'css/[name].chunk.css',
+        })
     ]
 };
