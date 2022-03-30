@@ -25,6 +25,13 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
+                test: /\.js|.jsx?$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            },
+            {
                 test: /\.css?$/,
                 use: [
                     {
@@ -53,16 +60,16 @@ module.exports = {
                     "sass-loader",
                 ],
             },
-            {
-                test: /\.ts?$/,
-                use: {
-                    loader: 'ts-loader',
-                    options: {
-                        appendTsSuffixTo: [/\.mahal$/],
-                    }
-                },
-                exclude: /node_modules/,
-            },
+            // {
+            //     test: /\.ts?$/,
+            //     use: {
+            //         loader: 'ts-loader',
+            //         options: {
+            //             appendTsSuffixTo: [/\.mahal$/],
+            //         }
+            //     },
+            //     exclude: /node_modules/,
+            // },
             // Images
             {
                 test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
@@ -93,7 +100,7 @@ module.exports = {
     },
     plugins: [
         new MahalPlugin({
-            lang: 'ts'
+            lang: 'js'
         }),
         new HtmlWebPackPlugin({
             cache: true,
