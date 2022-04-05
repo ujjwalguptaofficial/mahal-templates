@@ -13,7 +13,7 @@ const isEnvProduction = process.env.NODE_ENV === "production"
 module.exports = {
     entry: './src/index.js',
     devtool: 'source-map',
-    mode: process.env.NODE_ENV || "development",
+    mode: "development",
     module: {
         rules: [
             {
@@ -34,12 +34,12 @@ module.exports = {
             {
                 test: /\.css?$/,
                 use: [
-                    {
+                    isEnvProduction ? {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
                             esModule: false,
                         },
-                    },
+                    } : 'style-loader',
                     'css-loader'
                 ],
             },
@@ -48,12 +48,12 @@ module.exports = {
                 use: [
                     // Creates `style` nodes from JS strings
                     // "style-loader",
-                    {
+                    isEnvProduction ? {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
                             esModule: false,
                         },
-                    },
+                    } : 'style-loader',
                     // Translates CSS into CommonJS
                     "css-loader",
                     // Compiles Sass to CSS
@@ -115,6 +115,9 @@ module.exports = {
             filename: isEnvProduction ? 'css/[name].[contenthash:8].css' : 'css/[name].css',
             chunkFilename: isEnvProduction ? 'css/[name].[contenthash:8].chunk.css' : 'css/[name].chunk.css',
         }),
-
+        new webpack.EnvironmentPlugin({
+            'NODE_ENV': process.env.NODE_ENV || 'development',
+            'BUILD_ENV': process.env.BUILD_ENV || 'development'
+        })
     ]
 };
