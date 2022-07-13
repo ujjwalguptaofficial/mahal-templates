@@ -2,7 +2,6 @@ const path = require('path');
 const MahalPlugin = require('mahal-webpack-loader/lib/plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 
@@ -105,12 +104,6 @@ module.exports = {
             }
         }),
         new CleanWebpackPlugin(),
-        new CopyPlugin({
-            patterns: [{
-                from: './assets/',
-                to: ''
-            }]
-        }),
         new MiniCssExtractPlugin({
             filename: isEnvProduction ? 'css/[name].[contenthash:8].css' : 'css/[name].css',
             chunkFilename: isEnvProduction ? 'css/[name].[contenthash:8].chunk.css' : 'css/[name].chunk.css',

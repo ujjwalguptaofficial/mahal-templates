@@ -105,12 +105,6 @@ module.exports = {
             }
         }),
         new CleanWebpackPlugin(),
-        new CopyPlugin({
-            patterns: [{
-                from: './assets/',
-                to: ''
-            }]
-        }),
         new MiniCssExtractPlugin({
             filename: isEnvProduction ? 'css/[name].[contenthash:8].css' : 'css/[name].css',
             chunkFilename: isEnvProduction ? 'css/[name].[contenthash:8].chunk.css' : 'css/[name].chunk.css',
