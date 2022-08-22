@@ -4,7 +4,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const prod = merge(baseConfig, {
-    mode:   mode: process.env.NODE_ENV || 'development',
+    mode: process.env.NODE_ENV || 'development',
     devtool: false,
     output: {
         publicPath: '/',
@@ -41,7 +41,7 @@ const prod = merge(baseConfig, {
         maxEntrypointSize: 512000,
         maxAssetSize: 512000,
     },
-    plugins:[
+    plugins: [
         new CopyPlugin({
             patterns: [{
                 from: './assets/',
