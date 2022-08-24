@@ -6,7 +6,7 @@ dateCreated: April 05, 2022
 
 <html>
 <div class="mahal-app">
-	<img class="mahal-app_logo" :src="'mahal-logo.png' | imgPath" alt="mahal-logo" />
+	<img class="mahal-app_logo" src="/img/mahal-logo.png" alt="mahal-logo" />
 	<h1>Welcome to the {{appName}} App</h1>
 	<div class="mahal-app_imp-links-label">
 		Important Links
@@ -57,7 +57,7 @@ export default class extends Component {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .mahal-app {
     display: flex;
     align-items: center;
