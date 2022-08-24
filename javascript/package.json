@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:e2e": "npm run build && karma start tests/karma.conf.e2e.js",
+    "test:e2e": "npm run build && karma start tests/karma.conf.js",
     "test:unit": "cross-env BUILD_ENV=test mochapack --require ./tests/jsdom.setup.js --webpack-config config/webpack/dev.config.js \"tests/unit/**/*.test.js\"  --full-trace",
     "dev": "webpack serve --open --config config/webpack/dev.config.js",
     "deploy": "cross-env NODE_ENV=production webpack --config config/webpack/prod.config.js",
@@ -37,7 +37,6 @@
     "karma-chrome-launcher": "^3.1.1",
     "karma-mocha": "^2.0.1",
     "karma-mocha-reporter": "^2.2.5",
-    "karma-webpack": "^5.0.0",
     "mini-css-extract-plugin": "^2.5.3",
     "mocha": "^10.0.0",
     "mochapack": "^2.1.4",
@@ -46,9 +45,9 @@
     "style-loader": "^3.3.1",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.5",
-    "webpack": "^5.67.0",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.3",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.0",
     "webpack-merge": "^5.8.0"
   },
   "project": {
