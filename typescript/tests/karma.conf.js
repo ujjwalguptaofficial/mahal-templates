@@ -10,14 +10,14 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://www.npmjs.com/search?q=keywords:karma-adapter
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha', 'chai', 'karma-typescript'],
 
 
     // list of files / patterns to load in the browser
     files: [
       'dist/**/*.js',
       { pattern: 'dist/**/*.*', watched: false, included: false, served: true, nocache: false },
-      'tests/e2e/**/*.test.js'
+      'tests/e2e/**/*.test.ts'
     ],
     proxies: {
       // "/img": "/base/dist/img/"
@@ -32,6 +32,7 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
     preprocessors: {
+      "**/*.ts": ['karma-typescript']
     },
 
 
@@ -66,7 +67,7 @@ module.exports = function (config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true,
-
+    // webpack: require("../config/webpack/dev.config"),
     // Concurrency level
     // how many browser instances should be started simultaneously
     concurrency: Infinity

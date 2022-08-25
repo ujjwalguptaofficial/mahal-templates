@@ -12,3 +12,5 @@ This app is generated using `mahal-creator`.
 * `npm run dev` - start development server
 * `npm run build` - create build for development
 * `npm run deploy` - create build for production
+* `npm run test:unit` - run unit test cases
+* `npm run test:e2e` - run end to end test cases

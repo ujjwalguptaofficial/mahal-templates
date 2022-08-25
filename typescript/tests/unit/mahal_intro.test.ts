@@ -1,7 +1,5 @@
 import { initiate, mount, getMount } from "@mahaljs/test-utils";
 import MahalIntro from "@/components/mahal_intro.mahal";
-import { expect } from "chai";
-
 
 describe("Mahal Intro", () => {
     let component;
