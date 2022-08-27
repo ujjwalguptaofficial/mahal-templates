@@ -12,7 +12,7 @@ dateCreated: April 05, 2022
 		Important Links
 	</div>
 	<div class="mahal-app_imp-links">
-		<a :for(link in importantLinks) :href="link.path">
+		<a :for(link in importantLinks) :href="link.path" target="_blank">
 			{{link.label}}
 		</a>
 	</div>
@@ -33,6 +33,10 @@ export default class extends Component {
         {
             label: "Examples",
             path: "https://github.com/ujjwalguptaofficial/mahal-examples",
+        },
+        {
+            label: "Blog",
+            path: "https://medium.com/mahal-js",
         },
     ];
 
