@@ -14,11 +14,11 @@
   "license": "",
   "private": "true",
   "dependencies": {
-    "mahal": "^1.4.2"
+    "mahal": "^1.4.3"
   },
   "devDependencies": {
-    "@mahaljs/test-utils": "^1.4.2",
-    "@mahaljs/webpack-loader": "^1.4.2",
+    "@mahaljs/test-utils": "^1.4.3",
+    "@mahaljs/webpack-loader": "^1.4.3",
     "@types/chai": "^4.3.3",
     "@types/mocha": "^9.1.1",
     "chai": "^4.3.6",
