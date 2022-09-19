@@ -11,10 +11,10 @@ dateCreated:
 </html>
 
 <script>
-import { Component, Children } from "mahal";
+import { Component, children } from "mahal";
 import MahalIntro from "@/components/mahal_intro.mahal";
 
-@Children({
+@children({
     MahalIntro,
 })
 export default class extends Component {}
