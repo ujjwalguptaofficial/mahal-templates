@@ -14,14 +14,14 @@
   "license": "",
   "private": "true",
   "dependencies": {
-    "mahal": "^1.5.0"
+    "mahal": "^1.8.3"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",
     "@babel/plugin-proposal-decorators": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
-    "@mahaljs/test-utils": "^1.5.0",
-    "@mahaljs/webpack-loader": "^1.5.0",
+    "@mahaljs/test-utils": "^1.8.1",
+    "@mahaljs/webpack-loader": "^1.8.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-parameter-decorator-custom": "^1.0.0",
     "chai": "^4.3.6",
